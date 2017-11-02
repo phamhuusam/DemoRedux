@@ -3,22 +3,42 @@ import {
     Platform,
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
+
+import './getTemp';
 
 export default class App  extends Component {
     render() {
         return (
             <View style= { styles.container }>
-                <Text> demo </Text>
+                <Text style= {styles.message}> Hà nội nhiệt độ là 230c </Text>
+                <TouchableOpacity style= {styles.button}>
+                    <Text >
+                        Lấy nhiệt độ
+                    </Text>
+                </TouchableOpacity>
             </View>
-        )
+        );
     }
 }
 
 const styles = StyleSheet.create( {
     container: {
-        backgroundColor: 'yellow',
-        flex: 1
+        backgroundColor: 'lightblue',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+     message: {
+        fontSize: 25,
+        color: 'grey'      
+    },
+
+    button: { 
+        backgroundColor: 'red',
+        padding: 10,     
+        margin: 10   
     }
- });    
+ }); 
