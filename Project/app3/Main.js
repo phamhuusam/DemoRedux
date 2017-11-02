@@ -11,7 +11,7 @@ import {
 import {connect} from 'react-redux';
 
 import  getTemp from './getTemp';
-import { beginFetch, fetchErrors, fetchSuccess, fetchDataThunk } from './redux/actionCreators';
+import * as actionCreators from './redux/actionCreators';
 
  class Main  extends Component {
     constructor(props) {
@@ -61,7 +61,7 @@ import { beginFetch, fetchErrors, fetchSuccess, fetchDataThunk } from './redux/a
 function mapStateToProps(state) {
     return {cityName: state.cityName, temp: state.temp, isErrors: state.isErrors, isLoading: state.isLoading};
 }
-export default connect(mapStateToProps, {beginFetch, fetchErrors, fetchSuccess, fetchDataThunk})(Main);
+export default connect(mapStateToProps, actionCreators )(Main);
 
 const styles = StyleSheet.create( {
     container: {
