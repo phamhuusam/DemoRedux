@@ -1,0 +1,25 @@
+import React, { Component } from 'react';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    TextInput
+} from 'react-native';
+
+import Main from './Main';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+
+export default class App  extends Component {
+    
+    render() {
+        return (
+            <Provider store = { store }>
+                <Main/>
+           </Provider>
+        );
+    }
+}
